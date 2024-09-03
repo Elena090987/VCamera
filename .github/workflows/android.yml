@@ -24,9 +24,10 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-    - uses: gradle/actions/setup-gradle@v4
-      with:
-        gradle-version: 4.0
+      - name: Set up GRADLE
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 4.0
 
       # - name: Setup Android SDK
       #   uses: android-actions/setup-android@v3
