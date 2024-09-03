@@ -24,18 +24,21 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Set up GRADLE
+      - name: Setup Gradle 7.0
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: 4.0
+          gradle-version: "7.0" # Quotes required to prevent YAML converting to number
+
+      - name: Build with Gradle 7.0
+        run: gradle build
 
       # - name: Setup Android SDK
       #   uses: android-actions/setup-android@v3
       #   with:
       #     cmdline-tools-version: 9123335
 
-      - name: Build with Gradle
-        run: |
-          chmod +x gradlew
-          gradle wrapper
-          gradle assembleRelease
+      # - name: Build with Gradle
+      #   run: |
+      #     chmod +x gradlew
+      #     gradle wrapper
+      #     gradle assembleRelease
