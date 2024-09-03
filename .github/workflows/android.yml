@@ -35,5 +35,6 @@ jobs:
       - name: Build with Gradle
         run: |
           ls -al
+          echo "android.useAndroidX=true" >> gradle.properties
           gradle build
 #          gradle assembleRelease
