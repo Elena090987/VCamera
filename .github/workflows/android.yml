@@ -25,17 +25,21 @@ jobs:
       - name: Setup Gradle 7.0.2
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: " 7.0.2" # Quotes required to prevent YAML converting to number
+          gradle-version: "7.0.2"
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: 9123335
 
-      - name: Build with Gradle
+      - name: Prepare
         run: |
           ls -al
           echo "android.useAndroidX=true" >> gradle.properties
+          gradle tasks
           gradle dependencies
+
+      - name: Build with Gradle
+        run: |
           gradle build
 #          gradle assembleRelease
