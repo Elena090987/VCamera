@@ -30,7 +30,9 @@ jobs:
           gradle-version: " 7.0.2" # Quotes required to prevent YAML converting to number
 
       - name: Build with Gradle  7.0.2
-        run: gradle build
+        run: |
+          ls -al
+          gradle build
 
       # - name: Setup Android SDK
       #   uses: android-actions/setup-android@v3
