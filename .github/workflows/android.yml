@@ -27,18 +27,13 @@ jobs:
         with:
           gradle-version: " 7.0.2" # Quotes required to prevent YAML converting to number
 
-      - name: Build with Gradle  7.0.2
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 9123335
+
+      - name: Build with Gradle
         run: |
           ls -al
           gradle build
-
-      # - name: Setup Android SDK
-      #   uses: android-actions/setup-android@v3
-      #   with:
-      #     cmdline-tools-version: 9123335
-
-      # - name: Build with Gradle
-      #   run: |
-      #     chmod +x gradlew
-      #     gradle wrapper
-      #     gradle assembleRelease
+#          gradle assembleRelease
