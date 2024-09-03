@@ -24,12 +24,12 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Setup Gradle 7.0
+      - name: Setup Gradle 7.0.2
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "7.0" # Quotes required to prevent YAML converting to number
+          gradle-version: " 7.0.2" # Quotes required to prevent YAML converting to number
 
-      - name: Build with Gradle 7.0
+      - name: Build with Gradle  7.0.2
         run: gradle build
 
       # - name: Setup Android SDK
