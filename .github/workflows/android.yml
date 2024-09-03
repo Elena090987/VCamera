@@ -30,5 +30,6 @@ jobs:
       - name: Build with Gradle
         run: |
           chmod +x gradlew
+          ./gradlew wrapper
           ./gradlew --no-daemon build
 
