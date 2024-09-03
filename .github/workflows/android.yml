@@ -33,5 +33,4 @@ jobs:
         run: |
           chmod +x gradlew
           gradle wrapper
-          ./gradlew --no-daemon build
-
+          gradle assembleRelease
